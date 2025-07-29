@@ -26,7 +26,7 @@ app.get('/items/:id', (req, res) => {
 
 // POST endpoint to create a new item
 app.post('/items', (req, res) => {
-  const newItem = id: req.body;
+  const newItem = req.body;
   items.push(newItem);
   res.status(201).json(newItem);
 });
