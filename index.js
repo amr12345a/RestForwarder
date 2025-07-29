@@ -6,10 +6,7 @@ const port = 3000;
 app.use(express.json());
 
 // Sample data
-let items = [
-  { id: 1, name: 'Item 1' },
-  { id: 2, name: 'Item 2' }
-];
+let items = [];
 
 // GET endpoint to fetch all items
 app.get('/items', (req, res) => {
@@ -30,9 +27,7 @@ app.get('/items/:id', (req, res) => {
 // POST endpoint to create a new item
 app.post('/items', (req, res) => {
   const newItem = {
-    id: items.length + 1,
-    name: req.body.name
-  };
+    id: req.body;
   items.push(newItem);
   res.status(201).json(newItem);
 });
